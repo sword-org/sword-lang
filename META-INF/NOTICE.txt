@@ -1,3 +1,8 @@
-need jar 
+
+====project home
+https://github.com/sword-org/sword-lang
+
+
+====need jar 
 commons-lang3
 Log4j

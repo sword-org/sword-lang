@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test.org.sword.chengn.lang;
+package test.org.sword.lang;
 
 import org.junit.Test;
 
