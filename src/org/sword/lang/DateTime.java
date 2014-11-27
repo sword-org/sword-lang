@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.sword.chengn.lang;
+package org.sword.lang;
 
 import java.util.Calendar;
 import java.util.Date;

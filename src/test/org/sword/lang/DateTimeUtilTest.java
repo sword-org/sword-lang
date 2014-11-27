@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test.org.sword.chengn.lang;
+package test.org.sword.lang;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
-import org.sword.chengn.lang.DateTimeUtil;
+import org.sword.lang.DateTimeUtil;
 
 
 /**

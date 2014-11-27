@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.sword.chengn.lang;
+package org.sword.lang;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
