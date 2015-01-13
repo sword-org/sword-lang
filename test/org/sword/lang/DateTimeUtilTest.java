@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test.org.sword.lang;
+package org.sword.lang;
 
 import static org.junit.Assert.assertEquals;
 
