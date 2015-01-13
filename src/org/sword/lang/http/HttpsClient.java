@@ -1,5 +1,9 @@
+
+/**
+ * 
+ */
 package org.sword.lang.http;
-import java.security.KeyManagementException;
+
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
@@ -13,16 +17,18 @@ import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-/**
- * 
- */
 
 /**
+ * 支持https的所有站点信任
  * @author ChengNing
  * @date 2015年1月13日
  */
 public class HttpsClient extends DefaultHttpClient {
 
+	/**
+	 * 重写DefaultHttpClient
+	 * @throws Exception
+	 */
 	public HttpsClient() throws Exception {
 		super();
 		SSLContext ctx = SSLContext.getInstance("TLS");

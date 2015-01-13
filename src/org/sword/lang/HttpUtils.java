@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
 import org.sword.lang.http.HttpsUtils;
 
 /**
- * 
+ * http 工具集
  * @author chengn
  * @date 2014年12月12日
  */
@@ -28,7 +28,7 @@ public class HttpUtils {
 
 	/**
 	 * post 请求
-	 * 
+	 * 支持https
 	 * @param url
 	 * @return
 	 */
@@ -37,7 +37,8 @@ public class HttpUtils {
 	}
 	
 	/**
-	 * 
+	 * post 请求 带参数
+	 * 支持https
 	 * @param url
 	 * @param data
 	 * @return
@@ -49,7 +50,7 @@ public class HttpUtils {
 	}
 	
 	/**
-	 * 
+	 * get请求，支持https
 	 * @param url
 	 * @return
 	 */
@@ -68,9 +69,6 @@ public class HttpUtils {
 	 */
 	private static String HttpPost(String url, String data) {
 		try {
-//			HttpEntity entity = Request.Post(url)
-//					.bodyString(data,ContentType.create("text/html", Consts.UTF_8))
-//					.execute().returnResponse().getEntity();
 			HttpClient httpClient = new DefaultHttpClient();
 			HttpPost post = new HttpPost(url);
 			if(data != null && !data.equals("")){
@@ -95,8 +93,6 @@ public class HttpUtils {
 	 */
 	private static String httpGet(String url) {
 		try {
-//			HttpEntity entity = Request.Post(url).
-//					execute().returnResponse().getEntity();
 			HttpClient httpClient = new DefaultHttpClient();
 			HttpGet get = new HttpGet(url);
 			HttpResponse response = httpClient.execute(get);
