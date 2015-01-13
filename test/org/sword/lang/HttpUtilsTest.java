@@ -5,7 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.sword.lang.HttpUtils;
-import org.sword.lang.http.HttpsUtils;
 
 public class HttpUtilsTest {
 
