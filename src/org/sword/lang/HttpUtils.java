@@ -5,16 +5,12 @@ package org.sword.lang;
 
 
 
+import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.client.fluent.Request;
+import org.apache.http.entity.ContentType;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
-import org.sword.lang.http.HttpsUtils;
 
 /**
  * 
@@ -43,8 +39,6 @@ public class HttpUtils {
 	 * @return
 	 */
 	public static String post(String url, String data){
-		if(url.startsWith("https"))
-			return HttpsUtils.post(url,data);
 		return HttpPost(url, data);
 	}
 	
@@ -54,8 +48,6 @@ public class HttpUtils {
 	 * @return
 	 */
 	public static String get(String url){
-		if(url.startsWith("https"))
-			return HttpsUtils.get(url);
 		return httpGet(url);
 	}
 
@@ -68,17 +60,9 @@ public class HttpUtils {
 	 */
 	private static String HttpPost(String url, String data) {
 		try {
-//			HttpEntity entity = Request.Post(url)
-//					.bodyString(data,ContentType.create("text/html", Consts.UTF_8))
-//					.execute().returnResponse().getEntity();
-			HttpClient httpClient = new DefaultHttpClient();
-			HttpPost post = new HttpPost(url);
-			if(data != null && !data.equals("")){
-				HttpEntity reqEntity = new StringEntity(data);
-				post.setEntity(reqEntity);
-			}
-			HttpResponse response = httpClient.execute(post);
-			HttpEntity entity = response.getEntity();
+			HttpEntity entity = Request.Post(url)
+					.bodyString(data,ContentType.create("text/html", Consts.UTF_8))
+					.execute().returnResponse().getEntity();
 			return entity != null ? EntityUtils.toString(entity) : null;
 		} catch (Exception e) {
 			logger.error("post请求异常，" + e.getMessage() + "\n post url:" + url);
@@ -95,12 +79,8 @@ public class HttpUtils {
 	 */
 	private static String httpGet(String url) {
 		try {
-//			HttpEntity entity = Request.Post(url).
-//					execute().returnResponse().getEntity();
-			HttpClient httpClient = new DefaultHttpClient();
-			HttpGet get = new HttpGet(url);
-			HttpResponse response = httpClient.execute(get);
-			HttpEntity entity = response.getEntity();
+			HttpEntity entity = Request.Post(url).
+					execute().returnResponse().getEntity();
 			return entity != null ? EntityUtils.toString(entity) : null;
 		} catch (Exception e) {
 			logger.error("get请求异常，" + e.getMessage() + "\n get url:" + url);
