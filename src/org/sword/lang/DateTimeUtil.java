@@ -13,8 +13,8 @@ import java.util.Date;
  */
 public class DateTimeUtil {
 	public static final String DEFAULT_FORMAT_DATE = "yyyy-MM-dd";
-	public static final String DEFAULT_FORMAT_TIME = "HH:mm:SS";
-	public static final String DEFAULT_FORMAT_DATETIME = "yyyy-MM-dd HH:mm:SS";
+	public static final String DEFAULT_FORMAT_TIME = "HH:mm:ss";
+	public static final String DEFAULT_FORMAT_DATETIME = "yyyy-MM-dd HH:mm:ss";
 	
 	/**
 	 * 字符串转换为日期
