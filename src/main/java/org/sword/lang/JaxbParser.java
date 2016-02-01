@@ -13,13 +13,15 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import org.apache.log4j.Logger;
+import org.apache.xml.serialize.OutputFormat;
+import org.apache.xml.serialize.XMLSerializer;
 
+import com.sun.xml.messaging.saaj.util.ByteOutputStream;
 
-import com.sun.org.apache.xml.internal.serialize.OutputFormat;
-import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 
 /**
+ * @TODO xml parse should be replaced?
+ * @TODO sasj usage?
  * @author ChengNing
  * @date   2014年12月7日
  */
