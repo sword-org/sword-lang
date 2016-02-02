@@ -21,7 +21,7 @@ public class HttpUtilsTest {
 		String https = HttpUtils.post("https://kyfw.12306.cn/otn/");
 		System.out.println(https);
 	}
-	
+
 	public void testHttpPost(){
 		String http = HttpUtils.post("http://kyfw.12306.cn/otn/");
 		System.out.println(http);
